@@ -1,4 +1,25 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm install --prefix=.. --install-strategy=hoisted --allow-remote=root"
+  "installCommand": "npm install --prefix=.. --install-strategy=hoisted --allow-remote=root",
+  "buildCommand": "npm run build --prefix=.. -- --filter=@librechat/frontend...",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/share/:path*", "destination": "/index.html" },
+    { "source": "/oauth/success", "destination": "/index.html" },
+    { "source": "/oauth/error", "destination": "/index.html" },
+    { "source": "/register", "destination": "/index.html" },
+    { "source": "/forgot-password", "destination": "/index.html" },
+    { "source": "/reset-password", "destination": "/index.html" },
+    { "source": "/verify", "destination": "/index.html" },
+    { "source": "/login/:path*", "destination": "/index.html" },
+    { "source": "/d/:path*", "destination": "/index.html" },
+    { "source": "/c/:path*", "destination": "/index.html" },
+    { "source": "/search", "destination": "/index.html" },
+    { "source": "/prompts/:path*", "destination": "/index.html" },
+    { "source": "/skills/:path*", "destination": "/index.html" },
+    { "source": "/insights", "destination": "/index.html" },
+    { "source": "/projects/:path*", "destination": "/index.html" },
+    { "source": "/agents/:path*", "destination": "/index.html" }
+  ]
 }
